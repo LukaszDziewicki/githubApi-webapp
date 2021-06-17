@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .checked {
+      color: orange;
+    }
+  </style>
+  <title>Repository Description</title>
+</head>
+<body>
+<h3>Repository Description of</h3><h3 th:text="${githubRepository.fullName}"></h3><br>
+<hr>
+<h3>As Card</h3><br>
+
+<div class="card border-success mb-3" style="max-width: 18rem; margin-left: 30%">
+  <div class="card-header bg-transparent border-success" >
+    <h5 th:text="${githubRepository.fullName}"></h5>
+  </div>
+
+  <div class="card-body ">
+    <em><q class="card-text" th:text="${githubRepository.description}"></q></em>
+  </div>
+
+  <div class="card-footer bg-transparent border-success">
+    <a th:href="@{__${githubRepository.cloneUrl}__}" class="text-decoration-none">
+      Clone repository here
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div class="card-footer bg-transparent border-success">
+    <span class="fa fa-star checked" th:text="${githubRepository.stars}"></span>
+  </div>
+
+  <div class="card-footer bg-transparent border-success" th:text="${githubRepository.createdAt}"></div>
+
+</div>
+
+</body>
+</html>
