@@ -36,5 +36,5 @@ GET model data in JSON format,
     
 GET designed model data using thymleaf and bootstrap
 
-    "/repositories/{owner}/{repository-name}/designed"
+    /repositories/{owner}/{repository-name}/designed
 
