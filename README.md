@@ -1,5 +1,5 @@
 # Github REST API - web application
-##### (application in progress)
+#### (application in progress)
 ## Table of contents
 * [Introduction](#introduction)
 * [Technologies](#technologies)
