@@ -4,7 +4,6 @@
 * [Introduction](#introduction)
 * [Technologies](#technologies)
 * [Functionalities](#Functionalities)
-* [Presentation](#Presentation)
 
 ## Introduction
 The main purpose of the project is to create the web application which uses Github REST API. 
