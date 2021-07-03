@@ -1,7 +1,7 @@
-package com.example.zadanie_rekrutacyjne.controller;
+package com.example.github_rest_application.controller;
 
-import com.example.zadanie_rekrutacyjne.model.GithubRepository;
-import com.example.zadanie_rekrutacyjne.service.GithubRepositoryService;
+import com.example.github_rest_application.model.GithubRepository;
+import com.example.github_rest_application.service.GithubRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

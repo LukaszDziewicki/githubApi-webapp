@@ -1,8 +1,8 @@
-package com.example.zadanie_rekrutacyjne.controller;
+package com.example.github_rest_application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.zadanie_rekrutacyjne.service.GithubRepositoryService;
+import com.example.github_rest_application.service.GithubRepositoryService;
 
 
 

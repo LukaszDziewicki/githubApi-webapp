@@ -1,4 +1,4 @@
-package com.example.zadanie_rekrutacyjne.model;
+package com.example.github_rest_application.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

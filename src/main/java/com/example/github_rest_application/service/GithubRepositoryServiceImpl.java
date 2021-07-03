@@ -1,9 +1,11 @@
-package com.example.zadanie_rekrutacyjne.service;
+package com.example.github_rest_application.service;
 
-import com.example.zadanie_rekrutacyjne.model.GithubRepository;
+import com.example.github_rest_application.model.GithubRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,14 +13,27 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Objects;
 
+@Service
+public class GithubRepositoryServiceImpl implements GithubRepositoryService {
 
-public interface GithubRepositoryService {
+    @Override
+    public GithubRepository getGithubRepository(String owner, String repositoryName) {
+        GithubRepository githubRepository = getGithubRepositoryFromAPI(owner, repositoryName);
+        return githubRepository;
+    }
 
-    GithubRepository getGithubRepository(String owner, String repositoryName);
+    @Override
+    public String getGithubRepositoryJson(String repositoryOwner, String repositoryName) {
 
-    String getGithubRepositoryJson(String repositoryOwner, String repositoryName);
+        GithubRepository githubRepository = getGithubRepository(repositoryOwner, repositoryName);
 
-    default GithubRepository getGithubRepositoryFromAPI(String owner, String repositoryName) {
+        String githubRepositoryJson = mapGithubRepositoryToJson(githubRepository);
+
+        return githubRepositoryJson;
+        }
+
+    @Override
+    public GithubRepository getGithubRepositoryFromAPI(String owner, String repositoryName) {
 
         GithubRepository githubRepository = null;
 
@@ -39,8 +54,8 @@ public interface GithubRepositoryService {
         }
     }
 
-
-    default String mapGithubRepositoryToJson(GithubRepository githubRepository) {
+    @Override
+    public String mapGithubRepositoryToJson(GithubRepository githubRepository) {
         ObjectMapper objectMapper = new ObjectMapper();
 
         String githubRepositoryJson = null;
@@ -56,11 +71,19 @@ public interface GithubRepositoryService {
         }
     }
 
-    default String getPathToRepositoryDetails(String repositoryOwner, String repositoryName) {
+    @Override
+    public String getPathToRepositoryDetails(String repositoryOwner, String repositoryName) {
         StringBuilder urlBuilder = new StringBuilder("https://api.github.com/repos/");
         urlBuilder.append(repositoryOwner + "/" + repositoryName);
         return urlBuilder.toString();
     }
 
 
+
+
+
+
+
 }
+
+
