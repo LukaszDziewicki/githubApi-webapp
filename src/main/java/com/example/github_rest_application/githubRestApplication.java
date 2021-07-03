@@ -1,13 +1,13 @@
-package com.example.zadanie_rekrutacyjne;
+package com.example.github_rest_application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ZadanieRekrutacyjneApplication {
+public class githubRestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ZadanieRekrutacyjneApplication.class, args);
+        SpringApplication.run(githubRestApplication.class, args);
     }
 
 }
